@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+  <title>SGB Bridging Assistant</title>
+
+  <!-- Tailwind config must load BEFORE the CDN script -->
+  <script src="./tailwind-config.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Audiowide&family=Dosis:wght@200..800&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    /* Fallback font loading */
+    .font-display {
+      font-family: 'Audiowide', 'Arial Black', 'Helvetica Bold', sans-serif;
+    }
+    /* Ensure title is visible even if fonts fail to load */
+    h1 {
+      color: #FFBB3D !important;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    }
+  </style>
+
+  <!-- Your custom CSS -->
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body class="min-h-screen p-4 sm:p-8">
+  <main class="w-full max-w-7xl mx-auto">
+    <!-- Header -->
+    <header class="text-center mb-12">
+      <h1
+        class="font-display text-5xl sm:text-6xl md:text-7xl font-bold text-brand-yellow pb-4 drop-shadow-lg"
+      >
+        SGB Bridging Assistant
+      </h1>
+      <p class="mt-4 text-white/70 text-lg">
+        Understand your bridging loan funding structure
+      </p>
+    </header>
+
+    <!-- Top Section: Inputs -->
+    <section id="inputs" class="mb-12 glass-card p-8 rounded-2xl shadow-2xl">
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-10 items-start"
+      >
+        <!-- Property Being Sold Section -->
+        <div>
+          <h2
+            class="font-display text-2xl font-bold text-white border-b-2 border-brand-yellow/50 pb-2 mb-6"
+          >
+            Property Being Sold
+          </h2>
+          <div class="space-y-4">
+            <div>
+              <label
+                for="selling-price"
+                class="block text-sm font-medium text-white/80 mb-1"
+                >Estimated Gross Selling Price</label
+              >
+              <div class="relative">
+                <span
+                  class="absolute inset-y-0 left-0 flex items-center pl-3 text-white/50"
+                  >$</span
+                >
+                <input
+                  type="text"
+                  id="selling-price"
+                  class="input-field w-full pl-7 pr-4 py-2 rounded-lg"
+                  inputmode="numeric"
+                />
+              </div>
+            </div>
+            <div>
+              <label
+                for="current-mortgage"
+                class="block text-sm font-medium text-white/80 mb-1"
+                >Current Mortgage on Existing Property</label
+              >
+              <div class="relative">
+                <span
+                  class="absolute inset-y-0 left-0 flex items-center pl-3 text-white/50"
+                  >$</span
+                >
+                <input
+                  type="text"
+                  id="current-mortgage"
+                  class="input-field w-full pl-7 pr-4 py-2 rounded-lg"
+                  inputmode="numeric"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- New Property to be Purchased Section -->
+        <div>
+          <h2
+            class="font-display text-2xl font-bold text-white border-b-2 border-brand-yellow/50 pb-2 mb-6"
+          >
+            New Property to be Purchased
+          </h2>
+          <div class="space-y-4">
+            <div>
+              <label
+                for="contract-price"
+                class="block text-sm font-medium text-white/80 mb-1"
+                >Contract Price</label
+              >
+              <div class="relative">
+                <span
+                  class="absolute inset-y-0 left-0 flex items-center pl-3 text-white/50"
+                  >$</span
+                >
+                <input
+                  type="text"
+                  id="contract-price"
+                  class="input-field w-full pl-7 pr-4 py-2 rounded-lg"
+                  inputmode="numeric"
+                />
+              </div>
+            </div>
+            <div>
+              <label
+                for="stamp-duty"
+                class="block text-sm font-medium text-white/80 mb-1"
+                >Stamp Duty</label
+              >
+              <div class="relative">
+                <span
+                  class="absolute inset-y-0 left-0 flex items-center pl-3 text-white/50"
+                  >$</span
+                >
+                <input
+                  type="text"
+                  id="stamp-duty"
+                  class="input-field w-full pl-7 pr-4 py-2 rounded-lg"
+                  inputmode="numeric"
+                />
+              </div>
+            </div>
+            <div>
+              <label
+                for="sundry-costs"
+                class="block text-sm font-medium text-white/80 mb-1"
+                >Sundry Costs (Legal, etc.)</label
+              >
+              <div class="relative">
+                <span
+                  class="absolute inset-y-0 left-0 flex items-center pl-3 text-white/50"
+                  >$</span
+                >
+                <input
+                  type="text"
+                  id="sundry-costs"
+                  class="input-field w-full pl-7 pr-4 py-2 rounded-lg"
+                  inputmode="numeric"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Your Contribution & Assumptions Section -->
+        <div>
+          <h2
+            class="font-display text-2xl font-bold text-white border-b-2 border-brand-yellow/50 pb-2 mb-6"
+          >
+            Your Funds & Assumptions
+          </h2>
+          <div class="space-y-4">
+            <div>
+              <label
+                for="current-funds"
+                class="block text-sm font-medium text-white/80 mb-1"
+                >Current Funds available</label
+              >
+              <div class="relative">
+                <span
+                  class="absolute inset-y-0 left-0 flex items-center pl-3 text-white/50"
+                  >$</span
+                >
+                <input
+                  type="text"
+                  id="current-funds"
+                  class="input-field w-full pl-7 pr-4 py-2 rounded-lg"
+                  inputmode="numeric"
+                />
+              </div>
+            </div>
+            <div>
+              <label
+                for="interest-rate"
+                class="block text-sm font-medium text-white/80 mb-1"
+                >Bridging Loan Interest Rate</label
+              >
+              <div class="relative">
+                <span
+                  class="absolute inset-y-0 right-0 flex items-center pr-3 text-white/50"
+                  >%</span
+                >
+                <input
+                  type="text"
+                  id="interest-rate"
+                  class="input-field w-full pr-7 pl-4 py-2 rounded-lg"
+                  value="8.92"
+                  inputmode="decimal"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bottom Section: Results -->
+    <section id="results-output" class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <!-- Populated by JS -->
+    </section>
+
+    <!-- Timeline Section -->
+    <section
+      id="timeline-section"
+      class="mt-8 md:col-span-2 glass-card p-8 rounded-2xl shadow-2xl"
+    >
+      <h2
+        class="font-display text-3xl font-bold text-white border-b-2 border-brand-yellow/50 pb-2 mb-6"
+      >
+        Understand the Timeline
+      </h2>
+      <ol id="timeline-list" class="space-y-4 text-white/90 list-decimal list-inside">
+        <!-- Populated by JS -->
+      </ol>
+    </section>
+  </main>
+
+  <!-- Your app logic -->
+  <script src="./app.js" defer></script>
+</body>
+</html>
