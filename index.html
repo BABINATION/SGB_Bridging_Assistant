@@ -26,8 +26,11 @@
     }
     /* Ensure title is visible even if fonts fail to load */
     h1 {
-      color: #FFBB3D !important;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+      color: #42db66 !important;
+      text-shadow: 
+        2px 2px 0px #2D4839,
+        4px 4px 0px #2D4839,
+        6px 6px 0px #2D4839;
     }
   </style>
 
@@ -53,11 +56,11 @@
     <!-- Header -->
     <header class="text-center mb-12">
       <h1
-        class="font-display text-5xl sm:text-6xl md:text-7xl font-bold text-brand-yellow pb-4 drop-shadow-lg"
+        class="font-display text-5xl sm:text-6xl md:text-7xl font-bold pb-4 drop-shadow-lg"
       >
         SGB Bridging Assistant
       </h1>
-      <p class="mt-4 text-white/70 text-lg">
+      <p class="mt-4 text-gray-600 text-lg">
         Understand your bridging loan funding structure
       </p>
     </header>
@@ -69,18 +72,18 @@
       >
         <!-- Property Being Sold Section -->
         <div>
-          <h2
-            class="font-display text-2xl font-bold text-white border-b-2 border-brand-yellow/50 pb-2 mb-6"
-          >
-            Property Being Sold
-          </h2>
+                     <h2
+             class="font-display text-2xl font-bold text-gray-800 border-b-2 border-brand-yellow/50 pb-2 mb-6"
+           >
+             Property Being Sold
+           </h2>
           <div class="space-y-4">
             <div>
-              <label
-                for="selling-price"
-                class="block text-sm font-medium text-white/80 mb-1"
-                >Estimated Gross Selling Price</label
-              >
+                             <label
+                 for="selling-price"
+                 class="block text-sm font-medium text-gray-700 mb-1"
+                 >Estimated Gross Selling Price</label
+               >
               <div class="relative">
                 <span
                   class="absolute inset-y-0 left-0 flex items-center pl-3 text-white/50"
